@@ -1,7 +1,8 @@
+require "pry"
 class Artist
 
     attr_accessor :name
-    @@all
+    @@all = []
 
     def initialize(name)
         @name = name
@@ -10,6 +11,12 @@ class Artist
 
     def self.all
         @@all
+    end
+
+    def songs
+        Song.all.select do |song_instance|
+            song_instance.artist == self
+        end
     end
 
 end
