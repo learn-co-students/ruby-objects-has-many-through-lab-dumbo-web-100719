@@ -14,9 +14,8 @@ class Patient
         @@all
     end
 
-    def new_appointment(date, doctor)
-        binding.pry
-        new_app = Appointment.new(date, self, doctor)
+    def new_appointment(doctor_instance, date_instance)
+        Appointment.new(date_instance, self, doctor_instance)
     end
 
     def appointments
