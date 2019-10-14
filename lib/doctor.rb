@@ -21,12 +21,13 @@ class Doctor
     end
 
     def new_appointment(date, patient)
+        binding.pry
         Appointment.new(date, patient, self)
     end
 
     def patients
-        self.appointments.map do |appointment|
-            appointment.patient
+        self.appointments.map do |appointment_instance|
+            appointment_instance.patient
         end
     end
 end
